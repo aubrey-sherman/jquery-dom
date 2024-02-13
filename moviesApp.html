@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie App</title>
+</head>
+
+<body>
+  <form>
+    Movie Title<input type="text" id="movie-title">
+
+    Movie Rating<input type="text" id="movie-rating">
+    <input type="submit" value="Add to movie" id='submit-button'>
+
+  </form>
+  <section id="movie-list"></section>
+  <script src="https://unpkg.com/jquery"></script>
+
+  <script>
+    // console.log($('#submit-button'));
+    $('form').on('submit', function (evt) {
+      evt.preventDefault();
+      const movieTitle = $('#movie-title').val();
+      const movieRating = $('#movie-rating').val();
+      $('section').append(movieTitle, movieRating);
+    })
+  </script>
+</body>
+
+</html>
